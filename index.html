@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/fancybox.css">
+
+    <title>Popup</title>
+</head>
+
+<body>
+    <style>
+        .poup-iner-main {
+            width: 901px;
+            border: none;
+            border-radius: 0;
+            border-radius: 10px;
+            height: 548px;
+            background-size: 100%;
+            padding: 0;
+            background-position: right center;
+            border: 4px solid #ef403d;
+            position: relative;
+        }
+
+        #popupformevent .fancybox-close-small {
+            top: -21px;
+            right: -20px;
+        }
+
+        #popupformevent .fancybox-close-small:after {
+            color: #fff;
+            content: "x";
+            background: #ef403d;
+            
+        }
+
+
+        .has-popup-left {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .sale-tag {
+            position: absolute;
+            top: -26px;
+            left: 50%;
+            width: 359px;
+            height: 46px;
+            transform: translateX(-50%);
+
+        }
+
+        .has-popup-left h3 {
+            font-size: 20px;
+            text-align: center;
+            color: #fff;
+            line-height: 24px;
+            margin: 0 0 8px;
+        }
+
+        .sale-tag h4 {
+            font-weight: 500;
+            text-transform: capitalize;
+            font-size: 23px;
+            text-align: center;
+            color: #fff;
+            line-height: 30px;
+            margin: 7px 0 0;
+        }
+
+        .has-popup-left h2 {
+            text-align: center;
+            border: none;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0;
+            padding: 0;
+            line-height: 30px;
+            margin: 0 0 10px;
+        }
+
+        .has-popup-left h2 span {
+            font-size: 26px;
+        }
+
+        .has-popup-left h2 span {
+            color: #ffc71b;
+        }
+
+        .has-popup-left ul li.last {
+            width: 98%;
+        }
+
+        .has-popup-left ul li.last input {
+            background: rgb(4, 4, 4);
+            background: linear-gradient(0deg, rgba(4, 4, 4, 1) 24%, rgba(56, 56, 55, 1) 88%);
+            border: none;
+        }
+
+        .has-popup-left ul li.last input:hover {
+            background: #ef403d;
+        }
+
+        .has-popup-left input,
+        .has-popup-left textarea {
+            border-radius: 4px !important;
+        }
+
+        .has-popup-left ul {
+            margin-bottom: 0;
+        }
+
+
+
+        .has-popup-left-inner .control-group {
+            margin-bottom: 12px;
+        }
+
+        .has-popup-left-inner .control-group input {
+            margin-bottom: 0;
+        }
+
+        .has-popup-left-inner .control-group textarea {
+            height: 80px;
+            resize: none;
+        }
+
+        .has-popup-left-inner .control-group input[type="submit"] {
+            background: #131315;
+            border: 1px solid #fff200;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        #popupformevent {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.62);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: none;
+        }
+
+        .poup-iner-main {
+            position: absolute;
+            top: 0px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        @media (min-width: 1200px) and (max-width: 1600px) {
+            .poup-iner-main {
+                height: 480px;
+                width: 800px;
+            }
+
+            .popupform form input {
+                font-size: 14px;
+                height: 42px;
+            }
+        }
+
+        @media (max-width:850px) {
+            .sale-tag h4 {
+                    font-size: 18px;
+                font-weight: 700;
+   
+            }
+            .sale-tag {
+                    width: 194px !important;
+            }
+            .popupform h2 {
+                 margin-top: 3rem;
+               }
+            .popupform form input {
+                font-size: 14px;
+                height: 42px;
+            }
+
+            .pop-has-left.left-img-pop {
+                display: none;
+            }
+
+            .has-popup-new .poup-iner-main {
+                width: 90%;
+                height: 450px;
+                background-size: cover;
+                border: none;
+                background: #153324;
+            }
+
+            .pop-has-right {
+                width: 100% !important;
+                margin-top: 5px;
+            }
+
+            .has-popup-left-inner-new {
+                display: flex;
+                width: auto !important;
+            }
+        }
+
+
+        .popupform.active {
+            display: block !important;
+        }
+
+    
+
+       .popupform p {
+            color: #42526E;
+            font-size: 18px;
+            padding: 0 0 8px;
+            text-align: center;
+        }
+
+        .popupform form p {
+            color: #42526E;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .popupform form p span {
+            color: #0c71f4;
+        }
+
+        p.small {
+            font-size: 14px;
+            color: #000;
+            text-align: center;
+            display: block;
+        }
+
+        .popupform form {
+            width: 100%;
+            font-size: 0;
+        }
+
+        .popupform form .fldst {
+            margin: 0px;
+            display: block;
+            width: 100%;
+        }
+
+        .popupform form .fldst .intl-tel-input {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .popupform form .fldst.btnattach button {
+            outline: none;
+            position: relative;
+            bottom: 0;
+            border: 0;
+            display: block;
+            right: 0;
+            background: #fa130d;
+            ;
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .popupform form p a {
+            color: #fa130d;
+            ;
+            font-weight: 600;
+        }
+
+        .popupform form .lst-p {
+            text-align: center;
+            padding: 15px 0px 0;
+        }
+
+        .popupform form input {
+            width: 100%;
+            margin: 0 0 0 0;
+            border: 1px solid #cbcbcb;
+            background: white;
+            padding: 10px 15px;
+            color: gray;
+            font-size: 14px;
+            border-radius: 10px;
+            height: 50px;
+            font-weight: 400;
+            outline: none !important;
+            margin: 0 0 15px 0;
+            color: #535353;
+        }
+
+        .popupform form input[type="submit"] {
+            background: #20CB98;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .popupform figure {
+            text-align: center;
+            margin: 0px 0 0px 0;
+        }
+
+        .popupform figure img {
+            width: 30%;
+        }
+
+        .intl-tel-input .country-list .country,
+        .intl-tel-input .country-list .country-name {
+            font-size: 14px;
+        }
+
+        .popupform .btn::after {
+            border-radius: 10px !important;
+        }
+
+
+
+        .mycustompop .ys-box {
+            width: 580px !important;
+            height: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .mycustompop .ys-box .ys-popup-content {
+            font-size: 0;
+            padding: 0;
+
+        }
+
+        .popupform .wrap {
+            width: 100%;
+        }
+
+
+        .popupform h2 {
+            line-height: 1;
+            text-align: center !important;
+            width: 100%;
+        }
+
+
+        .popupform h2 strong {
+            color: #030303;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 26px;
+        }
+
+        .popupform h2 span {
+            color: #ea2d62;
+            font-size: 22px;
+            text-transform: uppercase;
+            line-height: 1;
+        } 
+
+
+        .pop-has-left.left-img-pop img {
+            position: absolute;
+            left: -150px;
+            top: 130px;
+        }
+
+        .poup-iner-main {
+            width: 720px;
+            background: url(https://raw.githubusercontent.com/khalidkhan021/-image_assets/main/pop-bg-new-2021.png) no-repeat;
+            height: 455px;
+            background-size: cover;
+            border: none;
+        }
+
+        .sale-tag {
+            background: #ef403d;
+            border-radius: 30px;
+            width: auto;
+            top: -22px;
+            padding: 0 30px;
+        }
+
+        .has-popup-left-inner-new {
+            display: flex;
+            width: 96%;
+        }
+
+        .has-popup-left-inner {
+            width: 100%;
+
+        }
+
+        .pop-has-left {
+            width: 50%;
+        }
+
+        .pop-has-right {
+            width: 50%;
+            margin-top: 5px;
+        }
+
+        .popupform form {
+            width: 100%;
+            font-size: 0;
+        }
+
+        .has-popup-left-inner .control-group input[type="submit"] {
+            background: #00996d;
+            border: 1px solid #00996d;
+            font-weight: 600;
+            font-size: 18px;
+            height: auto;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    </style>
+    <div class="button">
+        <a href="javascript:;" class="popUpBtn">Click Here</a>
+    </div>
+
+    <div class="popupform has-popup-new" id="popupformevent">
+        <div class="poup-iner-main">
+            <div class="has-popup-left">
+                <div class="sale-tag">
+                    <h4>AVAIL 50% OFF</h4>
+                </div>
+                <div class="has-popup-left-inner">
+                    <h2>Responsive <span>POPUP</span> /Modal</h2>
+                    <div class="has-popup-left-inner-new">
+                        <div class="pop-has-left left-img-pop">
+                            <img src="https://raw.githubusercontent.com/khalidkhan021/-image_assets/main/american-img-2021.png" alt="">
+                        </div>
+                        <div class="pop-has-right">
+                            <form action="" class="jform validate main-pop" method="POST">
+                                <div class="col-md-12">
+                                    <div class="control-group">
+                                        <input type="text" placeholder="Name" name="Name" class="required" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="control-group">
+                                        <input type="email" name="Email" class="required email"
+                                            placeholder="Enter your email here" required="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12 phonecode">
+                                    <div class="control-group clearfix">
+                                        <div class="numberarea">
+                                            <input type="number" name="Number" id="phone-coun" class="number required"
+                                                placeholder="Phone Number" required="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <div class="control-group clearfix">
+                                        <div class="textarea_auto">
+                                            <textarea class="form-control" name="Message"
+                                                placeholder="Talk about your project" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="control-group clearfix  ">
+
+                                        <input type="submit"
+                                            class="btn btn-default pop_btn submit-btn fspx-23  ls-medium d-block w-100 fw-bold"
+                                            value="Send Now">
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button data-fancybox-close="" class="fancybox-close-small"></button>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</body>
+<script>
+    $('.popUpBtn').on('click', function () {
+        $('.popupform-main, #popupformevent').addClass('active');
+        $('body').addClass('o-hidden');
+        $('.overlay-bg').fadeIn(500);
+        $('.close-btn, #popupformevent .fancybox-close-small').on('click', function () {
+            $('.popupform-main, #popupformevent').removeClass('active');
+            $('body').removeClass('o-hidden');
+            $('.overlay-bg').fadeOut(500);
+        });
+        $('.overlay-bg').click(function () {
+            $('popupform-main, #popupformevent').removeClass('active');
+            $('body').removeClass('o-hidden');
+            $('.overlay-bg').fadeOut(500);
+        });
+    });
+
+
+</script>
+
+</html>
